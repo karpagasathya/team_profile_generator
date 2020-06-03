@@ -1,0 +1,19 @@
+{
+  "name": "team_profile_generator",
+  "version": "1.0.0",
+  "description": "creating team profile",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karpagasathya/team_profile_generator.git"
+  },
+  "author": "sathya guru",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/karpagasathya/team_profile_generator/issues"
+  },
+  "homepage": "https://github.com/karpagasathya/team_profile_generator#readme"
+}
