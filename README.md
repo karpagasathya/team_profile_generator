@@ -45,7 +45,7 @@ This is a Command-Line Interface (CLI) application that allows the user to creat
 
 ## Contributing
 
-Contributions are welcome. You can create an issue or submit 
+Contributions are welcome. You can create an issue or submit a pull request.
 
 ## Test
 
@@ -54,7 +54,9 @@ Contributions are welcome. You can create an issue or submit
 ```
 npm run test
 ```
-
+![](Assets/images/image1.png)
 ## License
 
-[MIT](license.txt) license
+[MIT](Assets/license.txt) license
+
+[Application demo]()
