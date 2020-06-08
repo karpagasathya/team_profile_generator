@@ -18,7 +18,7 @@ const idArr = [];
 
 const generateTeam = () => {
   const createManager = () => {
-    console.log("Welcome")
+    console.log("Welcome!")
     console.log("Please build your Engineering team");
     inquirer
       .prompt([
@@ -70,12 +70,13 @@ const generateTeam = () => {
       ])
       .then((answers) => {
         const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOfficeNumber);
-        console.log(manager);
+        // console.log(manager);
         teamMembers.push(manager);
         idArr.push(answers.managerId);
         createTeam();
       });
   };
+
 
   const createTeam = () => {
     inquirer
@@ -102,12 +103,7 @@ const generateTeam = () => {
   };
 
 
-
-
-
-
-
-
+  // Engineer function
   const newEngineer = () => {
     inquirer
       .prompt([
@@ -128,7 +124,7 @@ const generateTeam = () => {
           message: "What is your engineer's id?",
           validate: (answer) => {
             if (isNaN(answer) || answer < 1) {
-              return "Please enter a number g";
+              return "enter a number greater than zero";
             }
              else if (idArr.includes(answer)) {
                 return "ID is already taken. Enter a different one.";
@@ -146,7 +142,7 @@ const generateTeam = () => {
             if (pass) {
               return true;
             }
-            return " enter a valid email address.";
+            return "enter a valid email address.";
           },
         },
         {
@@ -155,7 +151,7 @@ const generateTeam = () => {
           message: "What is your engineer's GitHub username?",
           validate: (answer) => {
             if (answer === "") {
-              return "enter a valid username.";
+              return "enter a valid github username.";
             }
               return true;
           },
@@ -163,7 +159,7 @@ const generateTeam = () => {
       ])
       .then((answers) => {
         const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
-        console.log(engineer);
+        // console.log(engineer);
         teamMembers.push(engineer);
         idArr.push(answers.engineerId);
         createTeam();
@@ -171,11 +167,7 @@ const generateTeam = () => {
   };
 
 
-
-
-
-
-
+  // Intern function
   const newIntern = () => {
     inquirer
       .prompt([
@@ -196,7 +188,7 @@ const generateTeam = () => {
           message: "What is your intern's id?",
           validate: (answer) => {
            if (isNaN(answer) || answer < 1) {
-             return "Please enter a number greater than zero.";
+             return "enter a number greater than zero.";
            } else if (idArr.includes(answer)) {
              return "ID is already taken. Enter a different one.";
            } else {
@@ -224,13 +216,13 @@ const generateTeam = () => {
             if (answer !== "") {
               return true;
             }
-            return "Please enter valid school .";
+            return "enter a valid school name.";
           },
         },
       ])
       .then((answers) => {
         const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
-        console.log(intern);
+        // console.log(intern);
         teamMembers.push(intern);
         idArr.push(answers.internId);
         createTeam();
@@ -240,7 +232,7 @@ const generateTeam = () => {
   const renderHtml = () => {
     fs.writeFileSync(outputPath, render(teamMembers), "utf-8", (err) => {
       if (err) throw err;
-      console.log("Team generated");
+      console.log("Engineering Team is Generated!");
     });
   };
 
